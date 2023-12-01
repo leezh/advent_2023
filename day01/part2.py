@@ -18,9 +18,10 @@ STR_NUMBERS = [
     "nine",
 ]
 
-filename = os.path.join(os.path.dirname(__file__), 'input.txt')
+filename = os.path.join(os.path.dirname(__file__), "input.txt")
 if len(sys.argv) > 1:
     filename = sys.argv[-1]
+
 
 def convert_number(text):
     if text not in STR_NUMBERS:
@@ -41,7 +42,6 @@ with open(filename, "r", encoding="utf-8") as f:
             print(line.strip())
             continue
         number = first_digit * 10 + last_digit
-        print(number, '<-', line.strip())
+        print(number, "<-", line.strip())
         numbers.append(number)
-    print('Total:', sum(numbers))
-
+    print("Total:", sum(numbers))
