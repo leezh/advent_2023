@@ -68,7 +68,7 @@ def build_schematic(filename):
                 continue
             num.is_partnumber = True
             adjacent_numbers.append(num)
-        if len(adjacent_numbers) == 2:
+        if sym.value == "*" and len(adjacent_numbers) == 2:
             sym.gear_ratio = adjacent_numbers[0].value * adjacent_numbers[1].value
             print(sym)
     gear_ratios = [s.gear_ratio for s in symbols]
