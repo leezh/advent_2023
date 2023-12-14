@@ -3,6 +3,7 @@
 import os
 import sys
 
+
 def compare_lists(top: list[str], bottom: list[str], *, smudged: bool = False):
     has_smudge = False
     for a, b in zip(top, bottom):
@@ -26,12 +27,12 @@ def find_mirror(shape: list[list[str]]) -> int:
     middle = height // 2 + 1
     for i in range(1, middle):
         top = shape[:i]
-        bottom = [*reversed(shape[i:i + i])]
+        bottom = [*reversed(shape[i : i + i])]
         if compare_lists(top, bottom, smudged=True):
             return i * 100
         j = height - i
         top = shape[j:]
-        bottom = [*reversed(shape[j - i:j])]
+        bottom = [*reversed(shape[j - i : j])]
         if compare_lists(top, bottom, smudged=True):
             return j * 100
 
@@ -45,12 +46,12 @@ def find_mirror(shape: list[list[str]]) -> int:
     middle = width // 2 + 1
     for i in range(1, middle):
         top = transposed[:i]
-        bottom = [*reversed(transposed[i:i + i])]
+        bottom = [*reversed(transposed[i : i + i])]
         if compare_lists(top, bottom, smudged=True):
             return i
         j = width - i
         top = transposed[j:]
-        bottom = [*reversed(transposed[j - i:j])]
+        bottom = [*reversed(transposed[j - i : j])]
         if compare_lists(top, bottom, smudged=True):
             return j
 

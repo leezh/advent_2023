@@ -11,12 +11,12 @@ def find_mirror(shape: list[list[str]]) -> int:
     middle = height // 2 + 1
     for i in range(1, middle):
         top = shape[:i]
-        bottom = [*reversed(shape[i:i + i])]
+        bottom = [*reversed(shape[i : i + i])]
         if top == bottom:
             return i * 100
         j = height - i
         top = shape[j:]
-        bottom = [*reversed(shape[j - i:j])]
+        bottom = [*reversed(shape[j - i : j])]
         if top == bottom:
             return j * 100
 
@@ -30,12 +30,12 @@ def find_mirror(shape: list[list[str]]) -> int:
     middle = width // 2 + 1
     for i in range(1, middle):
         top = transposed[:i]
-        bottom = [*reversed(transposed[i:i + i])]
+        bottom = [*reversed(transposed[i : i + i])]
         if top == bottom:
             return i
         j = width - i
         top = transposed[j:]
-        bottom = [*reversed(transposed[j - i:j])]
+        bottom = [*reversed(transposed[j - i : j])]
         if top == bottom:
             return j
 
